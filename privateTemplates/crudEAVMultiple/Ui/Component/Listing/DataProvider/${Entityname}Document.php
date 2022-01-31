@@ -8,7 +8,7 @@
 
 namespace ${Vendorname}\${Modulename}\Ui\Component\Listing\DataProvider;
 
-class ${Entityname}Document extends \Magento\Framework\View\Element\UiComponent\DataProvider\${Entityname}Document
+class ${Entityname}Document extends \Magento\Framework\View\Element\UiComponent\DataProvider\Document
 {
     protected $_idFieldName = 'entity_id';
 
