@@ -11,7 +11,7 @@ namespace ${Vendorname}\${Modulename}\Model\ResourceModel\Attribute;
 use ${Vendorname}\${Modulename}\Setup\${Entityname}Setup;
 use Magento\Eav\Model\Config;
 use Magento\Eav\Model\EntityFactory as EavEntityFactory;
-use Magento\Eav\Model\ResourceModel\Entity\Attribute\${Entityname}Collection as EavCollection;
+use Magento\Eav\Model\ResourceModel\Entity\Attribute\Collection as EavCollection;
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface;
 use Magento\Framework\Data\Collection\EntityFactory;
 use Magento\Framework\DB\Adapter\AdapterInterface;
