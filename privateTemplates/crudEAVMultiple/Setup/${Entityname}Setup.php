@@ -67,9 +67,9 @@ class ${Entityname}Setup extends EavSetup
             self::ENTITY_TYPE_CODE => [
                 'entity_model' => '${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}',
                 'attribute_model' => '${Vendorname}\${Modulename}\Model\ResourceModel\Eav\${Entityname}Attribute',
-                'table' => self::ENTITY_TYPE_CODE . '_entity',
+                'table' => ${vendor}_${module}_self::ENTITY_TYPE_CODE . '_entity',
                 'increment_model' => null,
-                'additional_attribute_table' => self::ENTITY_TYPE_CODE . '_eav_attribute',
+                'additional_attribute_table' => ${vendor}_${module}_self::ENTITY_TYPE_CODE . '_eav_attribute',
                 'entity_attribute_collection' => '${Vendorname}\${Modulename}\Model\ResourceModel\Attribute\${Entityname}Collection',
                 'attributes' => $this->getAttributes()
             ]
