@@ -8,9 +8,9 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 
-    <!--${vendor}_${module}_{$entityname} is defined here -->
+    <!--${vendor}_${module}_${entityname} is defined here -->
     <!-- static properties -->
-    <table name="${vendor}_${module}_{$entityname}_entity" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity" resource="default" engine="innodb">
         <column xsi:type="int" name="entity_id" identity="true" unsigned="true" nullable="false" comment="Entity Id" />
         <column xsi:type="varchar" length="100" name="identifier" nullable="false" comment="Identifier" />
         <column xsi:type="timestamp" name="created_at" nullable="false" comment="Creation Time" default="CURRENT_TIMESTAMP" on_update="false" />
@@ -28,7 +28,7 @@
     </table>
 
 
-    <table name="${vendor}_${module}_{$entityname}_eav_attribute" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_eav_attribute" resource="default" engine="innodb">
         <column name="attribute_id" xsi:type="smallint" identity="true" unsigned="true" nullable="false" comment="Attribute Id" />
         <column name="is_global" xsi:type="smallint" unsigned="true" nullable="false" default="1" comment="Is Global" />
         <column name="is_filterable" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Is Filterable" />
@@ -42,12 +42,12 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="attribute_id" />
         </constraint>
-        <constraint referenceId="attribute_id" xsi:type="foreign" table="${vendor}_${module}_{$entityname}_eav_attribute" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" />
+        <constraint referenceId="attribute_id" xsi:type="foreign" table="${vendor}_${module}_${entityname}_eav_attribute" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" />
     </table>
 
 
     <!-- datetime table -->
-    <table name="${vendor}_${module}_{$entityname}_entity_datetime" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity_datetime" resource="default" engine="innodb">
         <column name="value_id" xsi:type="int" identity="true" unsigned="true" nullable="false" comment="Value Id" />
         <column name="attribute_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Attribute Id" />
         <column name="store_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Store Id" />
@@ -72,14 +72,14 @@
         <index indexType="btree" referenceId="store_id">
             <column name="store_id" />
         </index>
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_datetime" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_datetime" column="entity_id" referenceTable="${vendor}_${module}_{$entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_datetime" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_datetime" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_datetime" column="entity_id" referenceTable="${vendor}_${module}_${entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_datetime" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
     </table>
 
 
     <!-- decimal table -->
-    <table name="${vendor}_${module}_{$entityname}_entity_decimal" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity_decimal" resource="default" engine="innodb">
         <column name="value_id" xsi:type="int" identity="true" unsigned="true" nullable="false" comment="Value Id" />
         <column name="attribute_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Attribute Id" />
         <column name="store_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Store Id" />
@@ -102,14 +102,14 @@
         <index indexType="btree" referenceId="store_id">
             <column name="store_id" />
         </index>
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_decimal" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_decimal" column="entity_id" referenceTable="${vendor}_${module}_{$entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_decimal" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_decimal" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_decimal" column="entity_id" referenceTable="${vendor}_${module}_${entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_decimal" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
     </table>
 
 
     <!-- text table -->
-    <table name="${vendor}_${module}_{$entityname}_entity_text" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity_text" resource="default" engine="innodb">
         <column name="value_id" xsi:type="int" identity="true" unsigned="true" nullable="false" comment="Value Id" />
         <column name="attribute_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Attribute Id" />
         <column name="store_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Store Id" />
@@ -132,14 +132,14 @@
         <index indexType="btree" referenceId="store_id">
             <column name="store_id" />
         </index>
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_text" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_text" column="entity_id" referenceTable="${vendor}_${module}_{$entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_text" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_text" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_text" column="entity_id" referenceTable="${vendor}_${module}_${entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_text" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
     </table>
 
 
     <!-- varchar table -->
-    <table name="${vendor}_${module}_{$entityname}_entity_varchar" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity_varchar" resource="default" engine="innodb">
         <column name="value_id" xsi:type="int" identity="true" unsigned="true" nullable="false" comment="Value Id" />
         <column name="attribute_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Attribute Id" />
         <column name="store_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Store Id" />
@@ -162,14 +162,14 @@
         <index indexType="btree" referenceId="store_id">
             <column name="store_id" />
         </index>
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_varchar" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_varchar" column="entity_id" referenceTable="${vendor}_${module}_{$entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_varchar" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_varchar" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_varchar" column="entity_id" referenceTable="${vendor}_${module}_${entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_varchar" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
     </table>
 
 
     <!-- int table -->
-    <table name="${vendor}_${module}_{$entityname}_entity_int" resource="default" engine="innodb">
+    <table name="${vendor}_${module}_${entityname}_entity_int" resource="default" engine="innodb">
         <column name="value_id" xsi:type="int" identity="true" unsigned="true" nullable="false" comment="Value Id" />
         <column name="attribute_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Attribute Id" />
         <column name="store_id" xsi:type="smallint" unsigned="true" nullable="false" default="0" comment="Store Id" />
@@ -192,11 +192,11 @@
         <index indexType="btree" referenceId="store_id">
             <column name="store_id" />
         </index>
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_int" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_int" column="entity_id" referenceTable="${vendor}_${module}_{$entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
-        <constraint xsi:type="foreign" table="${vendor}_${module}_{$entityname}_entity_int" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_int" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE" referenceId="attribute_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_int" column="entity_id" referenceTable="${vendor}_${module}_${entityname}_entity" referenceColumn="entity_id" referenceId="entity_id" />
+        <constraint xsi:type="foreign" table="${vendor}_${module}_${entityname}_entity_int" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE" referenceId="store_id" />
     </table>
 
-    <!--${vendor}_${module}_{$entityname} end definition -->    
+    <!--${vendor}_${module}_${entityname} end definition -->    
 
 </schema>
