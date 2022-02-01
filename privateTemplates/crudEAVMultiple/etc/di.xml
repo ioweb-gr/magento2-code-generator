@@ -44,4 +44,14 @@
             <argument name="resourceModel" xsi:type="string">${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}</argument>
         </arguments>
     </type>
+
+    <preference for="${Vendor}\${Module}\Api\${Entityname}RepositoryInterface" type="${Vendor}\${Module}\Model\${Entityname}Repository"/>
+    <preference for="${Vendor}\${Module}\Api\Data\${Entityname}Interface" type="${Vendor}\${Module}\Model\${Entityname}"/>
+    <preference for="${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface" type="${Vendor}\${Module}\Model\${Entityname}SearchResult"/>
+
+    <type name="${Vendor}\${Module}\Model\${Entityname}Repository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor</argument>
+        </arguments>
+    </type>
 </config>
