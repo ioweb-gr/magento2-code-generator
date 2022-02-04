@@ -21,7 +21,7 @@ class ${Entityname}Attribute extends EavAttribute implements ScopedAttributeInte
     /**
      * Constants
      */
-    const MODULE_NAME = '${Vendorname}_${Entityname}';
+    const MODULE_NAME = '${Vendorname}_${Modulename}';
     const KEY_IS_GLOBAL = 'is_global';
     const KEY_IS_STATIC = 'static';
 

@@ -7,10 +7,14 @@
  */
 namespace ${Vendorname}\${Modulename}\Ui\Component\Form\${Entityname};
 
-use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\DataPersistorInterface;use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use ${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection;
+use Magento\Catalog\Model\Attribute\ScopeOverriddenValue;
+use ${Vendor}\${Module}\Api\Data\${Entityname}Interface;
+use ${Vendor}\${Module}\Api\${Entityname}RepositoryInterface;
+
 
 class DataProvider extends AbstractDataProvider
 {
@@ -18,7 +22,7 @@ class DataProvider extends AbstractDataProvider
      * @var Collection
      */
     protected $collection;
-    
+
     /**
      * @var FilterPool
      */
@@ -35,6 +39,21 @@ class DataProvider extends AbstractDataProvider
     protected $request;
 
     /**
+     * @var ScopeOverriddenValue
+     */
+    protected $scopeOverriddenValue;
+
+    /**
+     * @var ${Entityname}RepositoryInterface
+     */
+    protected $${entityname}Repository;
+
+    /**
+     * @var DataPersistorInterface
+     */
+    protected $dataPersistor;
+
+    /**
      * Construct
      *
      * @param string $name
@@ -43,6 +62,8 @@ class DataProvider extends AbstractDataProvider
      * @param Collection $collection
      * @param FilterPool $filterPool
      * @param RequestInterface $request
+     * @param ScopeOverriddenValue $scopeOverriddenValue
+     * @param ${Entityname}RepositoryInterface $${entityname}Repository
      * @param array $meta
      * @param array $data
      */
@@ -53,6 +74,9 @@ class DataProvider extends AbstractDataProvider
         Collection $collection,
         FilterPool $filterPool,
         RequestInterface $request,
+        ScopeOverriddenValue $scopeOverriddenValue,
+        DataPersistorInterface $dataPersistor,
+        ${Entityname}RepositoryInterface $${entityname}Repository,
         array $meta = [],
         array $data = []
     ) {
@@ -60,6 +84,9 @@ class DataProvider extends AbstractDataProvider
         $this->collection = $collection;
         $this->filterPool = $filterPool;
         $this->request = $request;
+        $this->scopeOverriddenValue = $scopeOverriddenValue;
+        $this->${entityname}Repository = $${entityname}Repository ;
+        $this->dataPersistor = $dataPersistor;
     }
 
     /**
@@ -82,5 +109,25 @@ class DataProvider extends AbstractDataProvider
             }
         }
         return $this->loadedData;
+    }
+
+    public function getMeta(){
+        $storeId = (int)$this->request->getParam('store');
+        $entityId = (int)$this->request->getParam($this->getRequestFieldName());
+        $meta = parent::getMeta();
+
+        if (!$entityId) {
+            return $meta;
+        }
+
+        $entityModel = $this->cookieRepository->getById($entityId);
+        $scopedFields = ['name'];//add your own here
+        foreach ($scopedFields as $scopedField) {
+            if ($storeId) {
+                $meta['main_fieldset']['children'][$scopedField]['arguments']['data']['config']['service'] = ['template' => 'ui/form/element/helper/service'];
+                $meta['main_fieldset']['children'][$scopedField]['arguments']['data']['config']['disabled'] = !$this->scopeOverriddenValue->containsValue(${Entityname}Interface::class, $entityModel, $scopedField, $storeId);
+            }
+        }
+        return $meta;
     }
 }
