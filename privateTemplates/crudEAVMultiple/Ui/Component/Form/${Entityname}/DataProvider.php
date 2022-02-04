@@ -7,7 +7,8 @@
  */
 namespace ${Vendorname}\${Modulename}\Ui\Component\Form\${Entityname};
 
-use Magento\Framework\App\Request\DataPersistorInterface;use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\DataPersistorInterface;
+use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use ${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection;
@@ -120,7 +121,7 @@ class DataProvider extends AbstractDataProvider
             return $meta;
         }
 
-        $entityModel = $this->cookieRepository->getById($entityId);
+        $entityModel = $this->${entityname}Repository->getById($entityId);
         $scopedFields = ['name'];//add your own here
         foreach ($scopedFields as $scopedField) {
             if ($storeId) {
