@@ -64,8 +64,8 @@
         <arguments>
             <argument name="metadata" xsi:type="array">
                 <item name="${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface" xsi:type="array">
-                    <item name="entityTableName" xsi:type="string">${vendorname}_${modulename}_${entity}_entity</item>
-                    <item name="eavEntityType" xsi:type="string">${vendorname}_${modulename}_${entity}</item>
+                    <item name="entityTableName" xsi:type="string">${vendorname}_${modulename}_${entityname}_entity</item>
+                    <item name="eavEntityType" xsi:type="string">${vendorname}_${modulename}_${entityname}</item>
                     <item name="identifierField" xsi:type="string">entity_id</item>
                 </item>
             </argument>
