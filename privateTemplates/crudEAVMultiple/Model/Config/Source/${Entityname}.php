@@ -10,10 +10,10 @@
  * Time: 9:05 μμ
  */
 
-namespace ${Vendor}\${Module}\Model\Config\Source;
+namespace ${Vendorname}\${Modulename}\Model\Config\Source;
 
 
-use ${Vendor}\${Module}\Api\${Entityname}RepositoryInterface;
+use ${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface;
 use Magento\Framework\Api\Search\SearchCriteriaInterfaceFactory;
 use Magento\Framework\Data\OptionSourceInterface;
 
@@ -43,7 +43,7 @@ class ${Entityname} implements OptionSourceInterface
         $ret = [];
 
         foreach ($items as $key => $item) {
-            /** @var $item \${Vendor}\${Module}\Api\Data\${Entityname}Interface */
+            /** @var $item \${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface */
             $ret[] = [
               'value' => $item->getId(),
               'label' => $item->getName(),

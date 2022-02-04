@@ -49,11 +49,11 @@
         </arguments>
     </type>
 
-    <preference for="${Vendor}\${Module}\Api\${Entityname}RepositoryInterface" type="${Vendor}\${Module}\Model\${Entityname}Repository"/>
-    <preference for="${Vendor}\${Module}\Api\Data\${Entityname}Interface" type="${Vendor}\${Module}\Model\${Entityname}"/>
-    <preference for="${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface" type="${Vendor}\${Module}\Model\${Entityname}SearchResult"/>
+    <preference for="${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}Repository"/>
+    <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface" type="${Vendorname}\${Modulename}\Model\${Entityname}"/>
+    <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}SearchResult"/>
 
-    <type name="${Vendor}\${Module}\Model\${Entityname}Repository">
+    <type name="${Vendorname}\${Modulename}\Model\${Entityname}Repository">
         <arguments>
             <argument name="collectionProcessor" xsi:type="object">Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor</argument>
         </arguments>
@@ -63,9 +63,9 @@
     <type name="Magento\Framework\EntityManager\MetadataPool">
         <arguments>
             <argument name="metadata" xsi:type="array">
-                <item name="${Vendor}\${Modulename}\Api\Data\${Entityname}Interface" xsi:type="array">
-                    <item name="entityTableName" xsi:type="string">${vendor}_${module}_${entity}_entity</item>
-                    <item name="eavEntityType" xsi:type="string">${vendor}_${module}_${entity}</item>
+                <item name="${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">${vendorname}_${modulename}_${entity}_entity</item>
+                    <item name="eavEntityType" xsi:type="string">${vendorname}_${modulename}_${entity}</item>
                     <item name="identifierField" xsi:type="string">entity_id</item>
                 </item>
             </argument>

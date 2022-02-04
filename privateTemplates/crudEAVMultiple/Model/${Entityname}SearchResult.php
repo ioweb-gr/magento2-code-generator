@@ -3,10 +3,10 @@
  * Copyright (c) 2020. IOWEB TECHNOLOGIES 
  */
 
-namespace ${Vendor}\${Module}\Model;
+namespace ${Vendorname}\${Modulename}\Model;
 
 use Magento\Framework\Api\SearchResults;
-use ${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface;
 
 class ${Entityname}SearchResult extends SearchResults implements ${Entityname}SearchResultInterface
 {

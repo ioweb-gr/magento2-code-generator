@@ -8,35 +8,35 @@
  */
 
 
-namespace ${Vendor}\${Module}\Api;
+namespace ${Vendorname}\${Modulename}\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
-use ${Vendor}\${Module}\Api\Data\${Entityname}Interface;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface;
 
 interface ${Entityname}RepositoryInterface
 {
     /**
      * @param int $id
-     * @return \${Vendor}\${Module}\Api\Data\${Entityname}Interface
+     * @return \${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getById($id);
 
     /**
-     * @param \${Vendor}\${Module}\Api\Data\${Entityname}Interface $${Entityname}
-     * @return \${Vendor}\${Module}\Api\Data\${Entityname}Interface
+     * @param \${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface $${Entityname}
+     * @return \${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface
      */
     public function save(${Entityname}Interface $${entityname});
 
     /**
-     * @param \${Vendor}\${Module}\Api\Data\${Entityname}Interface $${Entityname}
+     * @param \${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface $${Entityname}
      * @return void
      */
     public function delete(${Entityname}Interface $${entityname});
 
     /**
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
-     * @return \${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface
+     * @return \${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
 }

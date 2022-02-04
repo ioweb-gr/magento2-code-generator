@@ -3,17 +3,17 @@
  * Copyright (c) 2020. IOWEB TECHNOLOGIES
  */
 
-namespace ${Vendor}\${Module}\Model;
+namespace ${Vendorname}\${Modulename}\Model;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Exception\NoSuchEntityException;
-use ${Vendor}\${Module}\Api\Data\${Entityname}Interface;
-use ${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface;
-use ${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterfaceFactory;
-use ${Vendor}\${Module}\Api\${Entityname}RepositoryInterface;
-use ${Vendor}\${Module}\Model\ResourceModel\${Entityname}\CollectionFactory as ${Entityname}CollectionFactory;
-use ${Vendor}\${Module}\Model\ResourceModel\${Entityname}\Collection;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterfaceFactory;
+use ${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface;
+use ${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\CollectionFactory as ${Entityname}CollectionFactory;
+use ${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 
 class ${Entityname}Repository implements ${Entityname}RepositoryInterface
@@ -77,11 +77,11 @@ class ${Entityname}Repository implements ${Entityname}RepositoryInterface
          * @SuppressWarnings(PHPMD.CyclomaticComplexity)
          * @SuppressWarnings(PHPMD.NPathComplexity)
          * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
-         * @return \${Vendor}\${Module}\Api\Data\${Entityname}SearchResultInterface
+         * @return \${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface
          */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $criteria)
     {
-        /** @var \{$Vendorname}\${Module}\Model\ResourceModel\${Entityname}\Collection $collection */
+        /** @var \{$Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection $collection */
         $collection = $this->${entityname}CollectionFactory->create();
         $collection->addAttributeToSelect('*');
 

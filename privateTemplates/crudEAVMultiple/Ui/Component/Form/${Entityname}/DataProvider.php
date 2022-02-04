@@ -12,8 +12,8 @@ use Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use ${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection;
 use Magento\Catalog\Model\Attribute\ScopeOverriddenValue;
-use ${Vendor}\${Module}\Api\Data\${Entityname}Interface;
-use ${Vendor}\${Module}\Api\${Entityname}RepositoryInterface;
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface;
+use ${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface;
 
 
 class DataProvider extends AbstractDataProvider

@@ -19,7 +19,7 @@ class ${Entityname}Setup extends EavSetup
     /**
      * Entity type for ${Entityname} EAV attributes
      */
-    const ENTITY_TYPE_CODE = '${vendorname}_${module}_${entityname}';
+    const ENTITY_TYPE_CODE = '${vendorname}_${modulename}_${entityname}';
 
     /**
      * Retrieve Entity Attributes

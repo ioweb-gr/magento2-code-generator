@@ -3,14 +3,14 @@
  * Copyright (c) 2020. IOWEB TECHNOLOGIES
  */
 
-namespace ${Vendor}\${Module}\Api\Data;
+namespace ${Vendorname}\${Modulename}\Api\Data;
 
 use Magento\Framework\Api\ExtensibleDataInterface;
 
 /**
  * Interface ${Entityname}Interface
  *
- * @package ${Vendor}\${Module}\Api\Data
+ * @package ${Vendorname}\${Modulename}\Api\Data
  */
 interface ${Entityname}Interface extends ExtensibleDataInterface
 {
@@ -39,12 +39,12 @@ interface ${Entityname}Interface extends ExtensibleDataInterface
 
 
     /**
-     * @return \${Vendor}\${Module}\Api\Data\${Entityname}ExtensionInterface|null
+     * @return \${Vendorname}\${Modulename}\Api\Data\${Entityname}ExtensionInterface|null
      */
     public function getExtensionAttributes();
 
     /**
-     * @param \${Vendor}\${Module}\Api\Data\${Entityname}ExtensionInterface $extensionAttributes
+     * @param \${Vendorname}\${Modulename}\Api\Data\${Entityname}ExtensionInterface $extensionAttributes
      *
      * @return void
      */

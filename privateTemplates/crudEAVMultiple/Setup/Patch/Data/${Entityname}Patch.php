@@ -4,12 +4,12 @@
  * @author
  */
 
-namespace ${Vendor}\${Module}\Setup\Patch\Data;
+namespace ${Vendorname}\${Modulename}\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
-use ${Vendor}\${Module}\Setup\${Entityname}SetupFactory;
-use ${Vendor}\${Module}\Setup\${Entityname}Setup;
+use ${Vendorname}\${Modulename}\Setup\${Entityname}SetupFactory;
+use ${Vendorname}\${Modulename}\Setup\${Entityname}Setup;
 
 /**
  * @codeCoverageIgnore
