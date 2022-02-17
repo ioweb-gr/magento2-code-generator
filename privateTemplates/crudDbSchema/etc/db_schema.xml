@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <!--${vendorname}_${modulename}_${entityname} is defined here -->
+    <!-- static properties -->
+    <table name="${vendorname}_${modulename}_${entityname}" resource="default" engine="innodb">
+        <column xsi:type="int" name="entity_id" identity="true" unsigned="true" nullable="false" comment="Entity Id" />
+        <column xsi:type="varchar" length="100" name="identifier" nullable="false" comment="Identifier" />
+        <column xsi:type="timestamp" name="created_at" nullable="false" comment="Creation Time" default="CURRENT_TIMESTAMP" on_update="false" />
+        <column xsi:type="timestamp" name="updated_at" nullable="false" comment="Update Time" default="CURRENT_TIMESTAMP" on_update="true" />
+        <!-- // Add more static attributes here...-->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id" />
+        </constraint>
+        <index referenceId="IDENTIFIER" indexType="btree" disabled="true">
+            <column name="identifier" />
+        </index>
+        <constraint xsi:type="unique" referenceId="UNIQUE">
+            <column name="identifier" />
+        </constraint>
+    </table>
+
+    <!--${vendorname}_${modulename}_${entityname} end definition -->
+
+</schema>
