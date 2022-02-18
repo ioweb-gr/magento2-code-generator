@@ -83,7 +83,7 @@ class ${Entityname}Repository implements ${Entityname}RepositoryInterface
     {
         /** @var \${VendorName}\${Modulename}\Model\ResourceModel\${Entityname}\Collection $collection */
         $collection = $this->${entityname}CollectionFactory->create();
-        $collection->addAttributeToSelect('*');
+        $collection->addFieldToSelect('*');
 
         $this->collectionProcessor->process($criteria, $collection);
 
