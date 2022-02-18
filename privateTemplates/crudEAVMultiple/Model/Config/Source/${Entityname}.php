@@ -14,7 +14,7 @@ namespace ${Vendorname}\${Modulename}\Model\Config\Source;
 
 
 use ${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface;
-use Magento\Framework\Api\Search\SearchCriteriaInterfaceFactory;
+use Magento\Framework\Api\SearchCriteriaInterfaceFactory;
 use Magento\Framework\Data\OptionSourceInterface;
 
 class ${Entityname} implements OptionSourceInterface
@@ -38,6 +38,7 @@ class ${Entityname} implements OptionSourceInterface
      */
     public function toOptionArray()
     {
+        /** @var  \Magento\Framework\Api\SearchCriteriaInterface $criteria */
         $criteria = $this->searchCriteriaInterfaceFactory->create();
         $items = $this->${entityname}Repository->getList($criteria)->getItems();
         $ret = [];
