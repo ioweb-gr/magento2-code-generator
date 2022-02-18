@@ -81,7 +81,7 @@ class ${Entityname}Repository implements ${Entityname}RepositoryInterface
          */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $criteria)
     {
-        /** @var \{$Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection $collection */
+        /** @var \${VendorName}\${Modulename}\Model\ResourceModel\${Entityname}\Collection $collection */
         $collection = $this->${entityname}CollectionFactory->create();
         $collection->addAttributeToSelect('*');
 
