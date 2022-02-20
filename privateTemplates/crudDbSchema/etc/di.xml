@@ -46,7 +46,7 @@
 
     <type name="${Vendorname}\${Modulename}\Model\${Entityname}Repository">
         <arguments>
-            <argument name="collectionProcessor" xsi:type="object">Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor</argument>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor</argument>
         </arguments>
     </type>
     <!-- end declarations for entity ${Entityname} -->
