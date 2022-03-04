@@ -9,10 +9,11 @@
 
 namespace ${Vendorname}\${Modulename}\Model;
 
-use Magento\Framework\DataObject\IdentityInterface;
+use Ioweb\StockManager\Api\Data\StockEntryExtensionInterface;use Magento\Framework\DataObject\IdentityInterface;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use Magento\Framework\Model\AbstractModel;
 
-class ${Entityname} extends AbstractModel implements IdentityInterface
+class ${Entityname} extends AbstractExtensibleModel implements IdentityInterface
 {
     /**
      * CMS page cache tag
@@ -64,6 +65,17 @@ class ${Entityname} extends AbstractModel implements IdentityInterface
             $this->addData($data[$this->getId()]);
             $this->getResource()->save($this);
         }
+        return $this;
+    }
+
+    public function getExtensionAttributes()
+    {
+        parent::_getExtensionAttributes();
+    }
+
+    public function setExtensionAttributes(StockEntryExtensionInterface $extensionAttributes)
+    {
+        parent::_setExtensionAttributes($extensionAttributes);
         return $this;
     }
 }
