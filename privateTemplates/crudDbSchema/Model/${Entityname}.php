@@ -74,7 +74,7 @@ class ${Entityname} extends AbstractExtensibleModel implements IdentityInterface
         parent::_getExtensionAttributes();
     }
 
-    public function setExtensionAttributes(StockEntryExtensionInterface $extensionAttributes)
+    public function setExtensionAttributes(${Entityname}ExtensionInterface $extensionAttributes)
     {
         parent::_setExtensionAttributes($extensionAttributes);
         return $this;
