@@ -42,8 +42,6 @@
 
     <preference for="${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}Repository"/>
     <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface" type="${Vendorname}\${Modulename}\Model\${Entityname}"/>
-    <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}ExtensionInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}Extension"/>
-
     <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}SearchResult"/>
 
     <type name="${Vendorname}\${Modulename}\Model\${Entityname}Repository">

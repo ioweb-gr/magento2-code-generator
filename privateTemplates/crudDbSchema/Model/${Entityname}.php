@@ -71,12 +71,11 @@ class ${Entityname} extends AbstractExtensibleModel implements IdentityInterface
 
     public function getExtensionAttributes()
     {
-        parent::_getExtensionAttributes();
+        return parent::_getExtensionAttributes();
     }
 
     public function setExtensionAttributes(${Entityname}ExtensionInterface $extensionAttributes)
     {
-        parent::_setExtensionAttributes($extensionAttributes);
-        return $this;
+        return parent::_setExtensionAttributes($extensionAttributes);
     }
 }
