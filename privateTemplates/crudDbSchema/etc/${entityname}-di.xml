@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * di
+ * @copyright Copyright © ${commentsYear} ${CommentsCompanyName}. All rights reserved.
+ * @author    ${commentsUserEmail}
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- begin declarations for entity ${Entityname} -->
+    <virtualType name="${Vendorname}${Entityname}GridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">${Vendorname}${Entityname}GridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="${Vendorname}${Entityname}GridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="${vendorname}_${modulename}_${entityname}_listing_data_source" xsi:type="string">${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">${vendorname}_${modulename}_${entityname}</argument>
+            <argument name="eventPrefix" xsi:type="string">${vendorname}_${modulename}_${entityname}_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">${vendorname}_${modulename}_${entityname}_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">${Vendorname}\${Modulename}\Model\ResourceModel\${Entityname}</argument>
+        </arguments>
+    </type>
+
+
+    <preference for="${Vendorname}\${Modulename}\Api\${Entityname}RepositoryInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}Repository"/>
+    <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface" type="${Vendorname}\${Modulename}\Model\${Entityname}"/>
+    <preference for="${Vendorname}\${Modulename}\Api\Data\${Entityname}SearchResultInterface" type="${Vendorname}\${Modulename}\Model\${Entityname}SearchResult"/>
+
+    <type name="${Vendorname}\${Modulename}\Model\${Entityname}Repository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor</argument>
+        </arguments>
+    </type>
+    <!-- end declarations for entity ${Entityname} -->
+</config>
