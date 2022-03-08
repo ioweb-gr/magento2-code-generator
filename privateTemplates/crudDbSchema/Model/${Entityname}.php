@@ -12,7 +12,7 @@ namespace ${Vendorname}\${Modulename}\Model;
 use Ioweb\StockManager\Api\Data\StockEntryExtensionInterface;use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractExtensibleModel;
 use Magento\Framework\Model\AbstractModel;
-use ${Vendorname}\${Modulename}\Api\Data
+use ${Vendorname}\${Modulename}\Api\Data\${Entityname}Interface;
 
 class ${Entityname} extends AbstractExtensibleModel implements IdentityInterface, ${Entityname}Interface
 {
